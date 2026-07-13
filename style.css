@@ -5,13 +5,13 @@
 :root {
     /* Paleta de Colores Principal */
     --color-fondo-crema: #FAF7F2;   /* Fondo muy suave y cálido */
-    --color-acento-café: #6F4E37;    /* Marrón café rico para títulos */
+    --color-acento-café: #88552e;    /* Marrón café rico para títulos */
     --color-texto-principal: #3E2A1C; /* Marrón oscuro para texto */
     --color-texto-suave: #8C7B70;   /* Marrón claro para subtítulos */
     --color-fondo-tarjeta: #FFFFFF;  /* Blanco para contraste en tarjetas */
     --color-borde-suave: #E0D7D0;   /* Borde sutil para elementos */
     --color-acento-rosa: #E0A79E;   /* Rosa viejo suave para detalles aesthetic */
-    --color-whatsapp: #25D366;      /* Color oficial de WhatsApp */
+    --color-whatsapp: #2c9d56;      /* Color oficial de WhatsApp */
     --color-instagram: #E4405F;     /* Color oficial de Instagram */
 
     /* Tipografías */
@@ -74,8 +74,7 @@ body {
     border-radius: 50%;
     /* Borde grueso y doble sombra: una hacia afuera y una interna para el relieve */
     border: 4px solid white;
-    box-shadow: 0 8px 20px rgba(62, 42, 28, 0.25), 
-                inset 0 0 15px rgba(0, 0, 0, 0.3);
+
     text-transform: uppercase;
     letter-spacing: 1px;
 }
