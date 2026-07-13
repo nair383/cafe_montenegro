@@ -1,13 +1,18 @@
+/* ==========================================================================
+   1. VARIABLES & RESET
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@500;800&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
+
 :root {
-    --bg-dark: #121212;         
-    --bg-card: #1a1a1a;         
-    --accent-gold: #c5a880;     
-    --text-main: #f5f5f7;       
-    --text-muted: #a1a1a6;      
-    --whatsapp-color: #25d366;
-    --instagram-color: #e1306c;
-    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --bg-color: #fcf9f2;         /* Fondo cálido tipo papel */
+    --text-color: #1a1a1a;       
+    --primary-color: #e27d60;    /* Terracota */
+    --accent-color: #c38d9e;     /* Rosa viejo */
+    --whatsapp-color: #25d366;   
+    --instagram-color: #e1306c;  
+    --border-thick: 4px solid #1a1a1a;
+    --shadow-brutal: 6px 6px 0px #1a1a1a;
+    --shadow-brutal-hover: 2px 2px 0px #1a1a1a;
 }
 
 * {
@@ -17,251 +22,271 @@
 }
 
 body {
-    font-family: var(--font-sans);
-    background-color: var(--bg-dark);
-    color: var(--text-main);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-}
-
-.hero {
-    position: relative;
-    padding: 4rem 1.5rem 3rem; 
-    text-align: center;
-    background: linear-gradient(180deg, rgba(18, 18, 18, 0.85) 0%, rgba(18, 18, 18, 1) 100%), 
-                url('https://images.unsplash.com/photo-1507133750040-4a8f57021571?q=80&w=800&auto=format&fit=crop') center/cover;
-    border-bottom: 1px solid rgba(197, 168, 128, 0.1);
-}
-
-.hero-content {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.logo-container {
-    margin-bottom: 1.5rem;
-}
-
-.logo-placeholder {
-    display: inline-block;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 1.6rem; 
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--accent-gold);
-    border: 2px solid var(--accent-gold);
-    padding: 0.6rem 1.2rem;
-    border-radius: 2px;
-    max-width: 100%;
-    word-wrap: break-word;
-}
-
-.hero h1 {
-    display: none; 
-}
-
-.tagline {
-    font-size: 1rem;
-    color: var(--text-muted);
-    font-weight: 300;
-    letter-spacing: 0.5px;
-    margin-top: 1rem;
-}
-
-.container {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 2rem 1.2rem; /
-}
-
-.divider {
-    border: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(197, 168, 128, 0.2), transparent);
-    margin: 2.5rem 0;
-}
-
-h2 {
-    font-size: 1.1rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--accent-gold);
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
-.links-section {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    padding: 1rem;
-    border-radius: 8px;
-    font-weight: 500;
-    font-size: 0.95rem;
-    text-decoration: none;
-    letter-spacing: 0.5px;
-    transition: var(--transition-smooth);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.btn-menu-digital {
-    background-color: rgba(197, 168, 128, 0.08);
-    color: var(--accent-gold);
-    border-color: rgba(197, 168, 128, 0.25);
-}
-
-.btn-menu-digital:hover {
-    background-color: var(--accent-gold);
-    color: var(--bg-dark);
-    transform: translateY(-2px);
-}
-
-.btn-whatsapp {
-    background-color: rgba(37, 211, 102, 0.08);
-    color: var(--whatsapp-color);
-    border-color: rgba(37, 211, 102, 0.15);
-}
-
-.btn-whatsapp:hover {
-    background-color: var(--whatsapp-color);
-    color: #fff;
-    transform: translateY(-2px);
-}
-
-.btn-instagram {
-    background-color: rgba(225, 48, 108, 0.08);
-    color: var(--instagram-color);
-    border-color: rgba(225, 48, 108, 0.15);
-}
-
-.btn-instagram:hover {
-    background-color: var(--instagram-color);
-    color: #fff;
-    transform: translateY(-2px);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.4;
+    overflow-x: hidden;
 }
 
 /* ==========================================================================
-   5. SECCIÓN IMPERDIBLES (MENÚ PREVIEW)
+   2. REUSABLE COMPONENTS (DIAGONAL & BRUTALIST)
+   ========================================================================== */
+h1, h2, h3 {
+    font-family: 'Lexend Mega', sans-serif;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.container {
+    max-width: 800px; /* Un poco más ancho para permitir la distribución horizontal */
+    margin: 0 auto;
+    padding: 2rem 1.2rem;
+}
+
+/* Divisor con inclinación diagonal brutalista */
+.divider {
+    border: none;
+    height: 6px;
+    background-color: var(--text-color);
+    margin: clamp(2.2rem, 6vw, 3.5rem) 0;
+    transform: rotate(-1deg);
+}
+
+/* ==========================================================================
+   3. HERO / HEADER (DIAGONAL DYNAMIC)
+   ========================================================================== */
+.hero {
+    background-color: var(--primary-color);
+    border-bottom: var(--border-thick);
+    padding: clamp(2.8rem, 8vw, 5rem) 1.5rem clamp(2.5rem, 7vw, 4.5rem);
+    text-align: center;
+    position: relative;
+}
+
+.logo-placeholder {
+    font-family: 'Lexend Mega', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    background: var(--bg-color);
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border: var(--border-thick);
+    box-shadow: var(--shadow-brutal);
+    margin-bottom: 2rem;
+    transform: rotate(-3deg);
+    transition: all 0.2s ease;
+}
+
+.hero:hover .logo-placeholder {
+    transform: rotate(3deg) scale(1.05);
+}
+
+.hero h1 {
+    font-size: clamp(1.9rem, 6vw, 2.8rem);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+    transform: skewX(-4deg); /* Inclinación de texto moderna */
+}
+
+.tagline {
+    font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+    font-weight: 700;
+    max-width: 480px;
+    margin: 0 auto;
+    background: var(--bg-color);
+    padding: 0.6rem 1.2rem;
+    border: var(--border-thick);
+    box-shadow: var(--shadow-brutal);
+    transform: rotate(1.5deg);
+}
+
+/* ==========================================================================
+   4. LINKS SECTION (DISTRIBUCIÓN HORIZONTAL / ASIMÉTRICA)
+   ========================================================================== */
+.links-section h2, .menu-section h2, .info-section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    letter-spacing: 1px;
+    background: var(--text-color);
+    color: var(--bg-color);
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    transform: rotate(-1.5deg);
+}
+
+.links-section {
+    text-align: center;
+}
+
+/* Distribución horizontal asimétrica mediante CSS Grid (auto-fit se acomoda solo en cualquier ancho) */
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.2rem;
+    margin-bottom: 3.5rem;
+}
+
+/* Botones en horizontal por defecto, jugando con ángulos */
+.btn {
+    display: flex;
+    flex-direction: row; /* Contenido horizontal (icono al lado del texto) */
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 1rem 1.4rem;
+    background-color: #ffffff;
+    border: var(--border-thick);
+    box-shadow: var(--shadow-brutal);
+    transition: all 0.15s ease;
+}
+
+/* Distribución en Diagonal y colores Neo-Brutalistas individuales */
+.btn-menu-digital { 
+    background-color: var(--accent-color); 
+    transform: rotate(-1deg);
+}
+.btn-whatsapp { 
+    background-color: var(--whatsapp-color); 
+    transform: rotate(1deg);
+}
+.btn-instagram { 
+    background-color: var(--instagram-color); 
+    color: white;
+    transform: rotate(-0.5deg);
+}
+
+.btn:hover {
+    transform: translateY(2px) translateX(2px) rotate(0deg);
+    box-shadow: var(--shadow-brutal-hover);
+}
+
+.btn:active {
+    transform: translateY(4px) translateX(4px);
+    box-shadow: none;
+}
+
+/* ==========================================================================
+   5. MENU SECTION (ZIG-ZAG DIAGONAL)
    ========================================================================== */
 .menu-grid {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
-    margin-top: 1.5rem;
+    gap: 2rem;
 }
 
+/* Estructura horizontal y asimétrica de las tarjetas del menú */
 .menu-card {
-    background-color: var(--bg-card);
-    border: 1px solid rgba(255, 255, 255, 0.02);
-    border-radius: 12px;
+    background: #ffffff;
+    border: var(--border-thick);
     padding: 1.5rem;
-    text-align: center;
-    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-brutal);
+    display: grid;
+    grid-template-columns: 80px 1fr; /* Icono a la izquierda, texto a la derecha */
+    gap: 1.5rem;
+    align-items: center;
+    transition: all 0.15s ease;
+}
+
+/* Efecto alternado/zig-zag en las tarjetas */
+.menu-card:nth-child(even) {
+    transform: rotate(1deg);
+    background-color: #fffdf9;
+}
+.menu-card:nth-child(odd) {
+    transform: rotate(-1deg);
 }
 
 .menu-card:hover {
-    transform: translateY(-3px);
-    border-color: rgba(197, 168, 128, 0.15);
+    transform: translateY(2px) translateX(2px) rotate(0deg);
+    box-shadow: var(--shadow-brutal-hover);
 }
 
 .menu-icon {
-    font-size: 1.8rem;
-    display: block;
-    margin-bottom: 0.5rem;
+    font-size: 2.2rem;
+    background: var(--primary-color);
+    padding: 0.5rem;
+    border: var(--border-thick);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
 }
 
 .menu-card h3 {
-    font-size: 1.1rem;
-    color: var(--accent-gold);
-    margin-bottom: 0.4rem;
-    font-weight: 500;
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
 }
 
 .menu-card p {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    line-height: 1.5;
+    font-size: 0.95rem;
+    color: #333;
 }
 
 /* ==========================================================================
-   6. TARJETAS DE INFORMACIÓN, MAPA Y UBICACIÓN (ARREGLADO MÓVIL)
+   6. INFO SECTION (DISTRIBUCIÓN LADO A LADO)
    ========================================================================== */
 .info-card {
-    background-color: var(--bg-card);
-    border-radius: 12px;
-    padding: 1.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.03);
-    display: flex;
-    flex-direction: column;
+    background: #ffffff;
+    border: var(--border-thick);
+    box-shadow: var(--shadow-brutal);
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas: Datos a la izquierda, mapa a la derecha */
     gap: 2rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: rotate(0.5deg);
 }
 
 .info-block {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    gap: 1.5rem;
+}
+
+.info-block:last-child {
+    margin-bottom: 0;
+    padding-top: 0;
+    border-top: none; /* Quitamos la línea divisoria vertical antigua */
 }
 
 .info-item {
     display: flex;
     gap: 1rem;
-    align-items: flex-start;
-    width: 100%;
 }
 
 .info-item .icon {
-    font-size: 1rem;
-    color: var(--accent-gold);
-    background: rgba(197, 168, 128, 0.08);
-    padding: 0.6rem;
-    border-radius: 50%;
-    width: 36px;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
+    font-size: 1.5rem;
+    color: var(--primary-color);
 }
 
 .info-item h3 {
-    font-size: 1.05rem;
-    font-weight: 500;
-    margin-bottom: 0.3rem;
-    color: var(--text-main);
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
 }
 
 .info-item p {
-    color: var(--text-muted);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 
 .map-link {
     display: inline-block;
-    margin-top: 0.4rem;
-    margin-bottom: 0.5rem;
-    color: var(--accent-gold);
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 500;
+    margin-top: 0.5rem;
+    color: var(--text-color);
+    font-weight: 800;
+    text-decoration: underline;
 }
 
 .map-container {
-    width: 100%;
-    height: 150px;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    margin-top: 0.75rem; /* Separación limpia bajo el bloque de texto */
+    height: 100%;
+    min-height: 220px;
+    border: var(--border-thick);
+    box-shadow: var(--shadow-brutal-hover);
 }
 
 /* ==========================================================================
@@ -269,46 +294,83 @@ h2 {
    ========================================================================== */
 footer {
     text-align: center;
-    padding: 2.5rem 1.5rem;
-    color: var(--text-muted);
-    font-size: 0.8rem;
+    padding: 3rem 1.5rem;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 4rem;
+    border-top: var(--border-thick);
 }
 
 /* ==========================================================================
-   8. RESPONSIVE DESIGN (PRO / OPTIMIZADO PARA PC)
+   8. RESPONSIVE OPTIMIZADO PARA MÓVILES (MOBILE FIRST / BREAKPOINTS)
    ========================================================================== */
-@media (min-width: 768px) {
-    .hero {
-        padding: 7rem 1.5rem 5rem;
-    }
-    
-    .logo-placeholder {
-        font-size: 2.2rem;
-        padding: 1rem 2rem;
-    }
-
+@media (max-width: 768px) {
     .tagline {
-        font-size: 1.2rem;
+        max-width: 90%;
     }
 
-    .container {
-        padding: 3rem 1.5rem;
+    /* Los botones se adaptan fluidamente */
+    .btn {
+        padding: 0.8rem 1.2rem;
+        font-size: 0.9rem;
     }
 
-    /* Grilla de menú pasa a 3 columnas en PC */
-    .menu-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    /* Distribución horizontal para la información */
+    /* Pasa de 2 columnas a 1 columna vertical sin desbastar */
     .info-card {
-        flex-direction: row;
-        gap: 1.5rem;
-        padding: 2rem;
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
-    .info-block {
-        flex: 1;
+    .map-container {
+        height: 250px; /* Altura más cómoda para ver el mapa en celulares */
+    }
+}
+
+@media (max-width: 480px) {
+    /* ... (mantén los estilos anteriores de .container y .buttons-grid) ... */
+
+    /* Modifica esta regla para que las tarjetas pasen a una sola columna */
+    .menu-card {
+        grid-template-columns: 1fr; /* Cambia a una sola columna */
+        justify-items: center;      /* Centra el ícono si lo deseas */
+        text-align: center;         /* Centra el texto para que luzca mejor en vertical */
+        gap: 1rem;
+        padding: 1.2rem;
+        overflow: hidden;           /* Evita cualquier desborde residual */
+    }
+
+    /* Asegura que los títulos grandes no rompan el layout */
+    .menu-card h3 {
+        font-size: 1.1rem;
+        word-wrap: break-word;      /* Fuerza el salto de línea si la palabra es muy larga */
+    }
+
+    .menu-icon {
+        font-size: 1.6rem;
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Animación de entrada */
+@keyframes popIn {
+    0% { transform: scale(0.98); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.container {
+    animation: popIn 0.3s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .container {
+        animation: none;
+    }
+    * {
+        transition-duration: 0.01ms !important;
     }
 }
