@@ -405,3 +405,41 @@ footer p:first-child {
         min-height: 250px;
     }
 }
+/* ==========================================================================
+   AJUSTE DE ALTURA Y AIRE PARA EL INICIO EN CELULARES
+   ========================================================================== */
+
+@media (max-width: 599px) {
+    .hero {
+        /* Le damos mucha más altura vertical (padding) para que respire */
+        padding: 6rem 1.5rem 4.5rem 1.5rem !important;
+        /* Un degradado un poco más largo para dar profundidad visual */
+        background: linear-gradient(180deg, #F3ECE1 0%, #E6DFD6 70%, var(--color-fondo-crema) 100%) !important;
+    }
+
+    .logo-container {
+        /* Más separación entre el logo circular y el título */
+        margin-bottom: 2rem !important; 
+    }
+
+    .logo-placeholder {
+        /* Hacemos el logo un pelín más grande para que tenga más presencia al abrir la web */
+        padding: 1.8rem !important;
+        font-size: 1.3rem !important;
+    }
+
+    .hero h1 {
+        /* Espaciado elegante para el nombre */
+        margin-top: 0.5rem !important;
+        margin-bottom: 1.2rem !important;
+        letter-spacing: -0.5px;
+    }
+
+    .tagline {
+        /* Un tamaño de letra ligeramente mayor y más separado para que no se amontone */
+        font-size: 1.05rem !important;
+        line-height: 1.6 !important;
+        padding: 0 0.5rem;
+    }
+}
+
