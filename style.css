@@ -1,20 +1,33 @@
 /* ==========================================================================
-   1. VARIABLES & RESET
+   ESTILOS GENERALES Y VARIABLES (PALETA AESTHETIC CAFÉ)
    ========================================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Mega:wght@500;800&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
 
 :root {
-    --bg-color: #fcf9f2;         /* Fondo cálido tipo papel */
-    --text-color: #1a1a1a;       
-    --primary-color: #e27d60;    /* Terracota */
-    --accent-color: #c38d9e;     /* Rosa viejo */
-    --whatsapp-color: #25d366;   
-    --instagram-color: #e1306c;  
-    --border-thick: 4px solid #1a1a1a;
-    --shadow-brutal: 6px 6px 0px #1a1a1a;
-    --shadow-brutal-hover: 2px 2px 0px #1a1a1a;
+    /* Paleta de Colores Principal */
+    --color-fondo-crema: #FAF7F2;   /* Fondo muy suave y cálido */
+    --color-acento-café: #6F4E37;    /* Marrón café rico para títulos */
+    --color-texto-principal: #3E2A1C; /* Marrón oscuro para texto */
+    --color-texto-suave: #8C7B70;   /* Marrón claro para subtítulos */
+    --color-fondo-tarjeta: #FFFFFF;  /* Blanco para contraste en tarjetas */
+    --color-borde-suave: #E0D7D0;   /* Borde sutil para elementos */
+    --color-acento-rosa: #E0A79E;   /* Rosa viejo suave para detalles aesthetic */
+    --color-whatsapp: #25D366;      /* Color oficial de WhatsApp */
+    --color-instagram: #E4405F;     /* Color oficial de Instagram */
+
+    /* Tipografías */
+    --fuente-titulos: 'Playfair Display', serif; /* Elegante y con personalidad */
+    --fuente-texto: 'Poppins', sans-serif;       /* Moderna y limpia */
+
+    /* Sombras */
+    --sombra-suave: 0 4px 15px rgba(0,0,0,0.05);
+    --sombra-hover: 0 8px 25px rgba(0,0,0,0.1);
+
+    /* Transiciones */
+    --transicion-rapida: 0.2s ease-in-out;
+    --transicion-media: 0.3s ease-in-out;
 }
 
+/* Reset de Estilos Básicos */
 * {
     margin: 0;
     padding: 0;
@@ -22,355 +35,374 @@
 }
 
 body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    line-height: 1.4;
-    overflow-x: hidden;
+    background-color: var(--color-fondo-crema);
+    color: var(--color-texto-principal);
+    font-family: var(--fuente-texto);
+    line-height: 1.6;
+    overflow-x: hidden; /* Evita scroll horizontal */
 }
 
 /* ==========================================================================
-   2. REUSABLE COMPONENTS (DIAGONAL & BRUTALIST)
+   HEADER - SECCIÓN HERO (ATENCIÓN Y BIENVENIDA)
    ========================================================================== */
-h1, h2, h3 {
-    font-family: 'Lexend Mega', sans-serif;
-    text-transform: uppercase;
-    font-weight: 800;
-}
 
-.container {
-    max-width: 800px; /* Un poco más ancho para permitir la distribución horizontal */
-    margin: 0 auto;
-    padding: 2rem 1.2rem;
-}
-
-/* Divisor con inclinación diagonal brutalista */
-.divider {
-    border: none;
-    height: 6px;
-    background-color: var(--text-color);
-    margin: clamp(2.2rem, 6vw, 3.5rem) 0;
-    transform: rotate(-1deg);
-}
-
-/* ==========================================================================
-   3. HERO / HEADER (DIAGONAL DYNAMIC)
-   ========================================================================== */
 .hero {
-    background-color: var(--primary-color);
-    border-bottom: var(--border-thick);
-    padding: clamp(2.8rem, 8vw, 5rem) 1.5rem clamp(2.5rem, 7vw, 4.5rem);
+    background: linear-gradient(135deg, #F3ECE1 0%, #E6DFD6 100%); /* Degradado suave */
+    padding: 3rem 1rem;
     text-align: center;
-    position: relative;
+    border-bottom: 2px solid var(--color-borde-suave);
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Estilo del Logo - Sello del Café */
+.logo-container {
+    margin-bottom: 1rem;
 }
 
 .logo-placeholder {
-    font-family: 'Lexend Mega', sans-serif;
-    font-size: 1.3rem;
-    font-weight: 800;
-    background: var(--bg-color);
     display: inline-block;
-    padding: 0.6rem 1.2rem;
-    border: var(--border-thick);
-    box-shadow: var(--shadow-brutal);
-    margin-bottom: 2rem;
-    transform: rotate(-3deg);
-    transition: all 0.2s ease;
-}
-
-.hero:hover .logo-placeholder {
-    transform: rotate(3deg) scale(1.05);
+    background-color: var(--color-acento-café);
+    color: white;
+    font-family: var(--fuente-titulos);
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 1.5rem;
+    border-radius: 50%;
+    /* Borde grueso y doble sombra: una hacia afuera y una interna para el relieve */
+    border: 4px solid white;
+    box-shadow: 0 8px 20px rgba(62, 42, 28, 0.25), 
+                inset 0 0 15px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .hero h1 {
-    font-size: clamp(1.9rem, 6vw, 2.8rem);
-    line-height: 1;
-    margin-bottom: 1.5rem;
-    letter-spacing: -1px;
-    transform: skewX(-4deg); /* Inclinación de texto moderna */
+    font-family: var(--fuente-titulos);
+    font-size: 2.2rem;
+    color: var(--color-acento-café);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
 }
 
 .tagline {
-    font-size: clamp(0.95rem, 2.2vw, 1.1rem);
-    font-weight: 700;
-    max-width: 480px;
-    margin: 0 auto;
-    background: var(--bg-color);
-    padding: 0.6rem 1.2rem;
-    border: var(--border-thick);
-    box-shadow: var(--shadow-brutal);
-    transform: rotate(1.5deg);
+    font-size: 0.95rem;
+    color: var(--color-texto-suave);
+    font-weight: 300;
+    font-style: italic;
 }
 
 /* ==========================================================================
-   4. LINKS SECTION (DISTRIBUCIÓN HORIZONTAL / ASIMÉTRICA)
+   CONTENEDOR PRINCIPAL Y TÍTULOS
    ========================================================================== */
-.links-section h2, .menu-section h2, .info-section h2 {
-    font-size: 1.3rem;
-    margin-bottom: 2rem;
-    text-align: center;
-    letter-spacing: 1px;
-    background: var(--text-color);
-    color: var(--bg-color);
-    display: inline-block;
-    padding: 0.4rem 1rem;
-    transform: rotate(-1.5deg);
+
+.container {
+    max-width: 800px; /* Ancho ideal para lectura y estilo Linktree */
+    margin: 0 auto;
+    padding: 2rem 1rem 4rem;
 }
+
+h2 {
+    font-family: var(--fuente-titulos);
+    font-size: 1.6rem;
+    color: var(--color-acento-café);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+/* Línea decorativa bajo los títulos */
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-acento-rosa);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--color-borde-suave), transparent);
+    margin: 2.5rem 0;
+}
+
+/* ==========================================================================
+   BOTONES DE ENLACE (ESTILO LINKTREE PERSONALIZADO)
+   ========================================================================== */
 
 .links-section {
-    text-align: center;
+    margin-bottom: 2rem;
 }
 
-/* Distribución horizontal asimétrica mediante CSS Grid (auto-fit se acomoda solo en cualquier ancho) */
 .buttons-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 1.2rem;
-    margin-bottom: 3.5rem;
+    grid-template-columns: 1fr; /* Columna única en móviles */
+    gap: 1rem;
 }
 
-/* Botones en horizontal por defecto, jugando con ángulos */
+/* Estilo Base de los Botones */
 .btn {
     display: flex;
-    flex-direction: row; /* Contenido horizontal (icono al lado del texto) */
     align-items: center;
     justify-content: center;
-    gap: 0.8rem;
+    gap: 0.75rem;
+    padding: 1.1rem 1.5rem;
+    border-radius: 14px;
     text-decoration: none;
-    color: var(--text-color);
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1rem;
-    padding: 1rem 1.4rem;
-    background-color: #ffffff;
-    border: var(--border-thick);
-    box-shadow: var(--shadow-brutal);
-    transition: all 0.15s ease;
+    transition: var(--transicion-media);
+    /* Borde marrón oscuro y sombra en diagonal para simular bloque 3D */
+    border: 3px solid var(--color-texto-principal);
+    box-shadow: 4px 4px 0px var(--color-texto-principal);
 }
 
-/* Distribución en Diagonal y colores Neo-Brutalistas individuales */
-.btn-menu-digital { 
-    background-color: var(--accent-color); 
-    transform: rotate(-1deg);
-}
-.btn-whatsapp { 
-    background-color: var(--whatsapp-color); 
-    transform: rotate(1deg);
-}
-.btn-instagram { 
-    background-color: var(--instagram-color); 
-    color: white;
-    transform: rotate(-0.5deg);
-}
-
+/* Al pasar el dedo o el mouse, el botón se "hunde" hacia la sombra */
 .btn:hover {
-    transform: translateY(2px) translateX(2px) rotate(0deg);
-    box-shadow: var(--shadow-brutal-hover);
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0px var(--color-texto-principal);
 }
 
-.btn:active {
-    transform: translateY(4px) translateX(4px);
-    box-shadow: none;
+/* Botón Carta Digital - Acción Principal */
+.btn-menu-digital {
+    background-color: var(--color-acento-café);
+    color: white;
+}
+
+.btn-menu-digital:hover {
+    background-color: #5D412E; /* Marrón más oscuro al hover */
+}
+
+/* Animación de pulso sutil para el Menú Digital */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(111, 78, 55, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(111, 78, 55, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(111, 78, 55, 0); }
+}
+
+.btn-menu-digital {
+    animation: pulse 2s infinite;
+}
+
+/* Botón WhatsApp */
+.btn-whatsapp {
+    background-color: white;
+    color: var(--color-whatsapp);
+    border-color: #C3E9D9;
+}
+
+.btn-whatsapp:hover {
+    background-color: #F0FAF5;
+}
+
+/* Botón Instagram */
+.btn-instagram {
+    background-color: white;
+    color: var(--color-instagram);
+    border-color: #F8D0D8;
+}
+
+.btn-instagram:hover {
+    background-color: #FEF2F4;
+}
+
+/* Iconos dentro de los botones */
+.btn i {
+    font-size: 1.2rem;
 }
 
 /* ==========================================================================
-   5. MENU SECTION (ZIG-ZAG DIAGONAL)
+   SECCIÓN MENÚ IMPERDIBLES (TARJETAS CON ESTILO)
    ========================================================================== */
+
+.menu-section {
+    margin-bottom: 2rem;
+}
+
 .menu-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-/* Estructura horizontal y asimétrica de las tarjetas del menú */
-.menu-card {
-    background: #ffffff;
-    border: var(--border-thick);
-    padding: 1.5rem;
-    box-shadow: var(--shadow-brutal);
     display: grid;
-    grid-template-columns: 80px 1fr; /* Icono a la izquierda, texto a la derecha */
-    gap: 1.5rem;
-    align-items: center;
-    transition: all 0.15s ease;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsivo: columnas adaptables */
+    gap: 1.2rem;
 }
 
-/* Efecto alternado/zig-zag en las tarjetas */
-.menu-card:nth-child(even) {
-    transform: rotate(1deg);
-    background-color: #fffdf9;
-}
-.menu-card:nth-child(odd) {
-    transform: rotate(-1deg);
+.menu-card {
+    background-color: var(--color-fondo-tarjeta);
+    padding: 1.5rem;
+    border-radius: 18px;
+    /* Borde definido y sombra con ligera inclinación */
+    border: 2px solid var(--color-texto-principal);
+    box-shadow: 5px 5px 15px rgba(62, 42, 28, 0.08);
+    transition: var(--transicion-media);
+    text-align: center;
 }
 
 .menu-card:hover {
-    transform: translateY(2px) translateX(2px) rotate(0deg);
-    box-shadow: var(--shadow-brutal-hover);
+    transform: translateY(-4px);
+    /* Al flotar, la sombra se estira aumentando el relieve */
+    box-shadow: 5px 12px 22px rgba(62, 42, 28, 0.15);
+    border-color: var(--color-acento-café);
 }
 
+/* El mini contenedor del emoji también con relieve */
 .menu-icon {
-    font-size: 2.2rem;
-    background: var(--primary-color);
-    padding: 0.5rem;
-    border: var(--border-thick);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    aspect-ratio: 1;
+    font-size: 2rem;
+    display: inline-block;
+    margin-bottom: 0.75rem;
+    background: var(--color-fondo-crema);
+    padding: 0.3rem 0.6rem;
+    border-radius: 10px;
+    border: 1px solid var(--color-borde-suave);
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
 }
-
 .menu-card h3 {
+    font-family: var(--fuente-titulos);
     font-size: 1.2rem;
-    margin-bottom: 0.3rem;
+    color: var(--color-acento-café);
+    margin-bottom: 0.4rem;
 }
 
 .menu-card p {
-    font-size: 0.95rem;
-    color: #333;
+    font-size: 0.85rem;
+    color: var(--color-texto-suave);
+    font-weight: 300;
 }
 
 /* ==========================================================================
-   6. INFO SECTION (DISTRIBUCIÓN LADO A LADO)
+   UBICACIÓN Y MAPA (INFORMACIÓN CLARA Y ESTILIZADA)
    ========================================================================== */
+
+.info-section {
+    margin-bottom: 2rem;
+}
+
 .info-card {
-    background: #ffffff;
-    border: var(--border-thick);
-    box-shadow: var(--shadow-brutal);
-    padding: 2rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Dos columnas: Datos a la izquierda, mapa a la derecha */
-    gap: 2rem;
-    transform: rotate(0.5deg);
+    background-color: var(--color-fondo-tarjeta);
+    border-radius: 20px;
+    border: 2px solid var(--color-texto-principal);
+    box-shadow: 6px 6px 0px rgba(62, 42, 28, 0.1);
+    overflow: hidden;
 }
 
 .info-block {
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-}
-
-.info-block:last-child {
-    margin-bottom: 0;
-    padding-top: 0;
-    border-top: none; /* Quitamos la línea divisoria vertical antigua */
+    gap: 1.2rem;
 }
 
 .info-item {
     display: flex;
     gap: 1rem;
+    align-items: flex-start;
 }
 
 .info-item .icon {
-    font-size: 1.5rem;
-    color: var(--primary-color);
+    color: var(--color-acento-rosa);
+    font-size: 1.2rem;
+    margin-top: 0.2rem;
+    width: 20px; /* Ancho fijo para alineación */
+    text-align: center;
 }
 
 .info-item h3 {
-    font-size: 1.1rem;
+    font-family: var(--fuente-texto);
+    font-size: 0.95rem;
+    color: var(--color-texto-principal);
     margin-bottom: 0.2rem;
+    font-weight: 600;
 }
 
 .info-item p {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
+    color: var(--color-texto-suave);
+    font-weight: 300;
 }
 
 .map-link {
-    display: inline-block;
-    margin-top: 0.5rem;
-    color: var(--text-color);
-    font-weight: 800;
-    text-decoration: underline;
+    color: var(--color-acento-café);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: var(--transicion-rapida);
 }
 
+.map-link:hover {
+    border-color: var(--color-acento-café);
+}
+
+/* Contenedor del Mapa Responsivo */
 .map-container {
-    height: 100%;
-    min-height: 220px;
-    border: var(--border-thick);
-    box-shadow: var(--shadow-brutal-hover);
+    width: 100%;
+    height: 200px; /* Altura del mapa en móviles */
+    background-color: #EEE; /* Fondo de carga */
 }
 
 /* ==========================================================================
-   7. FOOTER
+   FOOTER (PIE DE PÁGINA)
    ========================================================================== */
+
 footer {
     text-align: center;
-    padding: 3rem 1.5rem;
-    background-color: var(--text-color);
-    color: var(--bg-color);
-    font-size: 0.85rem;
-    font-weight: 800;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-top: 4rem;
-    border-top: var(--border-thick);
+    padding: 2.5rem 1rem;
+    background: linear-gradient(to top, #F3ECE1, var(--color-fondo-crema));
+    color: var(--color-texto-suave);
+    font-size: 0.75rem;
+    border-top: 1px solid var(--color-borde-suave);
+}
+
+footer p:first-child {
+    font-weight: 600;
+    color: var(--color-texto-principal);
+    margin-bottom: 0.3rem;
 }
 
 /* ==========================================================================
-   8. RESPONSIVE OPTIMIZADO PARA MÓVILES (MOBILE FIRST / BREAKPOINTS)
+   MEDIA QUERIES (AJUSTES PARA PANTALLAS GRANDES)
    ========================================================================== */
-@media (max-width: 768px) {
-    .tagline {
-        max-width: 90%;
+
+@media (min-width: 600px) {
+    /* Ajustes generales */
+    .container { padding: 3rem 2rem 5rem; }
+    h2 { font-size: 1.8rem; }
+
+    /* Hero */
+    .hero { padding: 4rem 2rem; }
+    .hero h1 { font-size: 2.6rem; }
+    .logo-placeholder { font-size: 1.4rem; }
+
+    /* Botones Grid - Pasamos a 2 columnas */
+    .buttons-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .btn-menu-digital {
+        grid-column: 1 / -1; /* Botón principal ocupa todo el ancho */
     }
 
-    /* Los botones se adaptan fluidamente */
-    .btn {
-        padding: 0.8rem 1.2rem;
-        font-size: 0.9rem;
+    /* Menú Imperdibles - Columnas fijas */
+    .menu-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 
-    /* Pasa de 2 columnas a 1 columna vertical sin desbastar */
+    /* Ubicación - Pasamos a 2 columnas (Info | Mapa) */
     .info-card {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+        display: flex;
+        flex-direction: row;
     }
-
+    .info-block {
+        flex: 1; /* Ocupa la mitad del espacio */
+        padding: 2rem;
+    }
     .map-container {
-        height: 250px; /* Altura más cómoda para ver el mapa en celulares */
-    }
-}
-
-@media (max-width: 480px) {
-    /* ... (mantén los estilos anteriores de .container y .buttons-grid) ... */
-
-    /* Modifica esta regla para que las tarjetas pasen a una sola columna */
-    .menu-card {
-        grid-template-columns: 1fr; /* Cambia a una sola columna */
-        justify-items: center;      /* Centra el ícono si lo deseas */
-        text-align: center;         /* Centra el texto para que luzca mejor en vertical */
-        gap: 1rem;
-        padding: 1.2rem;
-        overflow: hidden;           /* Evita cualquier desborde residual */
-    }
-
-    /* Asegura que los títulos grandes no rompan el layout */
-    .menu-card h3 {
-        font-size: 1.1rem;
-        word-wrap: break-word;      /* Fuerza el salto de línea si la palabra es muy larga */
-    }
-
-    .menu-icon {
-        font-size: 1.6rem;
-        width: 50px;
-        height: 50px;
-    }
-}
-
-/* Animación de entrada */
-@keyframes popIn {
-    0% { transform: scale(0.98); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
-}
-
-.container {
-    animation: popIn 0.3s ease-out forwards;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .container {
-        animation: none;
-    }
-    * {
-        transition-duration: 0.01ms !important;
+        flex: 1; /* Ocupa la otra mitad */
+        height: auto; /* Altura automática basada en la info */
+        min-height: 250px;
     }
 }
